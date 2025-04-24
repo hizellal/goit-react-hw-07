@@ -1,7 +1,7 @@
 import css from './SearchBox.module.css';
 import { Formik, Form, Field } from "formik";
 import { useDispatch, useSelector } from 'react-redux';
-import { contactFilter, selectNameFilter } from '../../redux/filtersSlice';
+import { changeFilter, selectNameFilter } from '../../redux/filtersSlice';
 import { useId } from 'react';
 
 export default function SearchBox() {
@@ -10,7 +10,7 @@ export default function SearchBox() {
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    dispatch(contactFilter(event.target.value));
+    dispatch(changeFilter(event.target.value));
   };
 
   return (
